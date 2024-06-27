@@ -1,0 +1,24 @@
+/* C program to read a line from the file using the function fgets */
+#include <stdio.h>
+void main()
+{
+    FILE *fp; 
+    char str[15];
+    char *ps;
+    fp = fopen("input.dat", "r");  //input.dat file with IIITNR
+    if (fp == NULL)
+    {
+        printf("Open unsuccessful"); 
+        return;
+    }
+    ps=fgets(str, 10, fp);
+    if (ps != NULL) 
+    {
+        printf("The string is :");
+        puts(str); 
+        return;
+    }
+    else 
+    printf("Reading is unsuccessful\n");
+}
+
